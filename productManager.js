@@ -36,8 +36,8 @@ class EnhancedProductManager extends ProductManager {
     getProductById(id) {
         this.loadData();
         const product = super.getProductById(id);
-        if (product === 'Not Found') {
-            throw new Error('Product not found');
+        if (product === 'No encontrado') {
+            throw new Error('Producto no encontrado');
         }
         return product;
     }
@@ -46,7 +46,7 @@ class EnhancedProductManager extends ProductManager {
         this.loadData();
         const index = this.products.findIndex((product) => product.id === id);
         if (index === -1) {
-            throw new Error('Product not found');
+            throw new Error('Producto no encontrado');
         }
         this.products[index] = { id, ...updatedProduct };
         this.saveData();
@@ -56,7 +56,7 @@ class EnhancedProductManager extends ProductManager {
         this.loadData();
         const index = this.products.findIndex((product) => product.id === id);
         if (index === -1) {
-            throw new Error('Product not found');
+            throw new Error('Producto no encontrado');
         }
         this.products.splice(index, 1);
         this.saveData();
